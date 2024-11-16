@@ -1,0 +1,76 @@
+---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+import Navigation from "#components/astro/Navigation.astro";
+import Footer from "#components/astro/Footer.astro";
+import Header from "#components/astro/Header.astro";
+import Sidebar from "#components/astro/Sidebar.astro";
+import AstroBreadcrumb from "#components/react/astro-breadcrumb.tsx";
+import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config";
+import "@fpkit/acss/styles";
+import "../styles/index.css";
+
+// types
+type routeItem = {
+  name: string;
+  url: string;
+  path?: string;
+};
+type Props = {
+  pageTitle?: string;
+  pageDescription?: string;
+  pageImageUrl?: string;
+  showBreadcrumb?: boolean;
+  breadcrumbRoutes?: routeItem[];
+};
+
+const showBreadcrumb =
+  Astro.props.showBreadcrumb === undefined ? true : Astro.props.showBreadcrumb;
+
+const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl } =
+  Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={SITE_DESCRIPTION} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle || SITE_TITLE}</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Navigation />
+    <Header
+      headerTitle={pageTitle}
+      headerDescription={pageDescription}
+      headerImageUrl={pageImageUrl}
+      headerImageAlt={pageTitle}
+    />
+    <slot name="featured" />
+    <main>
+      <section>
+        {
+          showBreadcrumb && (
+            <>
+              <AstroBreadcrumb
+                routes={breadcrumbRoutes || undefined}
+                client:load
+              />
+            </>
+          )
+        }
+      </section>
+      <section arai-label="main-content">
+        <article>
+          <slot />
+        </article>
+        <Sidebar />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

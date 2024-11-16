@@ -1,0 +1,23 @@
+---
+const platform = "github";
+const username = "shawn-sandy";
+import Social from "./Social.astro";
+const today = new Date();
+---
+
+<footer>
+  <div>
+    <p>
+      Learn more about my projects on
+
+      <Social platform="twitter" username="shawnsandy" />{" "}
+
+      <Social platform="github" username="shawn-sandy" />{" "}
+
+      <Social platform="youtube" username="astrodotbuild" />
+    </p>
+    <p>
+      &copy; {today.getFullYear()} Your name here. All rights reserved.
+    </p>
+  </div>
+</footer>
