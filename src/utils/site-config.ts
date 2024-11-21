@@ -21,8 +21,8 @@ export const BREADCRUMB_ROUTE = [
   },
 ];
 
-export const SITE_TITLE = "Astro Kit";
-export const SITE_DESCRIPTION = "A simple, easy to use multipurpose starter theme for Astro.";
+export const SITE_TITLE = "Conversations about the Gospel, Life and Everything in Between";
+export const SITE_DESCRIPTION = "You me and the Gospel"; 
 export const SITE_LOGO = "/logo.png";
 export const PAGINATION_COUNT: number = 2;
 export const CONTACT_INFO = {

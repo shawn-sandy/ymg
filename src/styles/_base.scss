@@ -6,11 +6,23 @@
 }
 body {
   min-width: 20.3125rem;
-  > nav ul > li{
-    padding-block: 1rem;
-    &:has(img):hover {
-  background-color: unset;
-}}
+  > nav {
+    width: min(100%, 1480px);
+    margin-inline: auto;
+    max-width: min(100%, 1480px);
+    ul > li {
+      padding-block: 1rem;
+      a[href] {
+        color: currentColor;
+        &:hover {
+          color: var(--error-color);
+        }
+      }
+      &:hover {
+        background-color: unset;
+      }
+    }
+  }
 }
 
 main {
@@ -43,15 +55,8 @@ h3 {
   text-transform: capitalize;
 }
 
-h1,
-h2,
-h3 {
-  text-transform: capitalize;
-}
-
 h2 a[href] {
   font-size: var(--h2);
-  /* color: currentColor; */
 }
 
 pre {
