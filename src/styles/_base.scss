@@ -2,9 +2,15 @@
   --img-radius: 1rem;
   --error-color: firebrick;
   --success-color: green;
+  --overlay-bg: transparent;
 }
 body {
   min-width: 20.3125rem;
+  > nav ul > li{
+    padding-block: 1rem;
+    &:has(img):hover {
+  background-color: unset;
+}}
 }
 
 main {
@@ -16,6 +22,7 @@ main > section {
 }
 
 header {
+  --overlay-bg: transparent;
   min-height: fit-content;
   padding-block: 3rem;
   grid-template-rows: minmax(300px, auto);
