@@ -45,8 +45,12 @@ header {
   }
 }
 
-header > section > p {
-  font-size: 2rem;
+header > section  p {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-inline: auto;
+  color: var(--error-color);
+
 }
 
 h1,

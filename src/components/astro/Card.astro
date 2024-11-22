@@ -19,8 +19,8 @@ const { cardTitle, cardImage, cardLink } = Astro.props as Props;
   {
     cardLink && (
       <div class="card-footer">
-        <a href={cardLink || "#"}>
-          <i>Continue Reading</i>
+        <a href={cardLink || "#"} aria-label={`Check episode ${cardTitle}`}>
+          <i>Check Episode</i>
         </a>
       </div>
     )
