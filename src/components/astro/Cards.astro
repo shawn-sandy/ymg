@@ -1,5 +1,5 @@
 ---
-import { Card as CardComponent } from "@fpkit/acss";
+import { Card  } from "@fpkit/acss";
 
 type Props = {
   cardTitle?: string;
@@ -10,12 +10,12 @@ type Props = {
 const { cardTitle, cardImage, cardLink } = Astro.props as Props;
 ---
 
-<CardComponent client:load>
+<Card client:load>
    <img src={cardImage || "images/ymg-blank.png"} alt="" />
-  <CardComponent.Title>{cardTitle ?? "Card Feature"}</CardComponent.Title>
-  <CardComponent.Content>
+  <Card.Title>{cardTitle ?? "Card Feature"}</Card.Title>
+  <Card.Content>
     <slot />
-  </CardComponent.Content>
+  </Card.Content>
   {
     cardLink && (
       <div class="card-footer">
@@ -25,4 +25,4 @@ const { cardTitle, cardImage, cardLink } = Astro.props as Props;
       </div>
     )
   }
-</CardComponent>
+</Card>

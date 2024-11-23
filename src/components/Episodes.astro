@@ -3,7 +3,8 @@ import { getCollection } from "astro:content";
 import type { SortType } from "#utils/types";
 import BlogPosts from "./BlogPosts.astro";
 import { PAGINATION_COUNT } from "#utils/site-config";
-import Card from "#components/astro/Card.astro";
+import Cards from "#components/astro/Cards.astro";
+import { Card } from "@fpkit/acss";
 
 import type { TODO } from "#utils/types";
 
@@ -36,21 +37,28 @@ const collectionResults = (await getCollection(collection || "content"))
 
 {collectionTitle && <h3 data-ui="display">{collectionTitle}</h3>}
 
- 
 <div data-flex="cols-2">
   {
-  collectionResults?.map((post: TODO) => (
-  <Card
-    cardTitle={post.data.title}
-    cardImage={post.data.image?.url}
-    cardLink={`/${to || "content"}/${post.slug}`}
-    client:load
-  >
-    <p>
-      {post.data.description}
-    </p>
-    </Card>
-  ))
-}
+    collectionResults?.map((post: TODO) => (
+ 
+        <Card client:load>
+          <img src={post.data.image?.url || "/images/ymg-blank.png"} alt="" />
+          <Card.Title>{post.data?.title ?? "Card Feature"}</Card.Title>
+          <Card.Content>
+            {post.data?.description}
+          </Card.Content>
+          {
+            <div class="card-footer">
+              <a
+                href={`/${to || "content"}/${post.slug}` || "#"}
+                aria-label={`Check episode ${post.data?.title}`}
+              >
+                <i>Check Episode</i>
+              </a>
+            </div>
+          }
+        </Card>
+     
+    ))
+  }
 </div>
-
