@@ -20,8 +20,7 @@ export default defineConfig({
     spotlightjs(),
     lighthouse(),
     embeds(),
-    mdx(),
-    astroImageTools,
+    mdx()
   ],
   adapter: netlify(),
   output: "hybrid",
