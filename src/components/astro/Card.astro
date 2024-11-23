@@ -11,7 +11,7 @@ const { cardTitle, cardImage, cardLink } = Astro.props as Props;
 ---
 
 <CardComponent>
-  {cardImage && <img src={cardImage ?? "https://picsum.photos/200"} alt="" />}
+   <img src={cardImage || "images/ymg-blank.png"} alt="" />
   <CardComponent.Title>{cardTitle ?? "Card Feature"}</CardComponent.Title>
   <CardComponent.Content>
     <slot />

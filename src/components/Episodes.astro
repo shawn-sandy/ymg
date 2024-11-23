@@ -46,10 +46,7 @@ const collectionResults = (await getCollection(collection || "content"))
     cardLink={`/${to || "content"}/${post.slug}`}
   >
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque corporis
-      soluta et vitae recusandae magnam atque ut consectetur minima ullam, sunt
-      labore, harum dolores consequatur exercitationem ex placeat! Veniam,
-      asperiores?
+      {post.data.description}
     </p>
     </Card>
   ))
