@@ -44,6 +44,7 @@ const collectionResults = (await getCollection(collection || "content"))
     cardTitle={post.data.title}
     cardImage={post.data.image?.url}
     cardLink={`/${to || "content"}/${post.slug}`}
+    client:load
   >
     <p>
       {post.data.description}

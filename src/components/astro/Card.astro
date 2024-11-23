@@ -10,7 +10,7 @@ type Props = {
 const { cardTitle, cardImage, cardLink } = Astro.props as Props;
 ---
 
-<CardComponent>
+<CardComponent client:load>
    <img src={cardImage || "images/ymg-blank.png"} alt="" />
   <CardComponent.Title>{cardTitle ?? "Card Feature"}</CardComponent.Title>
   <CardComponent.Content>
