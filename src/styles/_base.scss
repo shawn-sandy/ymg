@@ -46,7 +46,7 @@ header {
 }
 
 header > section  p {
-  font-size: 3rem;
+  font-size: var(--fs-7);
   font-weight: 500;
   margin-inline: auto;
   color: var(--error-color);
