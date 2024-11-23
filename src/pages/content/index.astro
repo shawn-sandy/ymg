@@ -12,9 +12,9 @@ const { Content } = await article.render();
 ---
 
 <MarkdownPostLayout frontmatter={article?.data}>
-  <Content />
+  <!-- <Content /> -->
   <hr />
   <section>
-    <!-- <CollectionList to="content" collection="content" pageSize={6} /> -->
+    <CollectionList to="content" collection="content" pageSize={6} />
   </section>
 </MarkdownPostLayout>
