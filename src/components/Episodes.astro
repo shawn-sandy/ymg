@@ -1,9 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import type { SortType } from "#utils/types";
-import BlogPosts from "./BlogPosts.astro";
+import type { SortType } from "#utils/types"; 
 import { PAGINATION_COUNT } from "#utils/site-config";
-import Cards from "#components/astro/Cards.astro";
 import { Card } from "@fpkit/acss";
 
 import type { TODO } from "#utils/types";
@@ -42,7 +40,7 @@ const collectionResults = (await getCollection(collection || "content"))
     collectionResults?.map((post: TODO) => (
  
         <Card>
-          <img src={post.data.image?.url || "/images/ymg-blank.png"} alt="" />
+          <img src={post.data.image?.url ?? "/images/ymg-blank.png"} alt="" />
           <Card.Title>{post.data?.title ?? "Card Feature"}</Card.Title>
           <Card.Content>
             {post.data?.description}
