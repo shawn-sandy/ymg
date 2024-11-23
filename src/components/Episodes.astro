@@ -41,7 +41,7 @@ const collectionResults = (await getCollection(collection || "content"))
   {
     collectionResults?.map((post: TODO) => (
  
-        <Card client:load>
+        <Card>
           <img src={post.data.image?.url || "/images/ymg-blank.png"} alt="" />
           <Card.Title>{post.data?.title ?? "Card Feature"}</Card.Title>
           <Card.Content>
