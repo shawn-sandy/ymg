@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = "About";
+const pageTitle = "About us";
 
 const identity = {
   firstName: "Sarah",
@@ -17,54 +17,13 @@ const goal = 3;
 ---
 
 <Layout pageTitle={pageTitle}>
-  <h2>{pageTitle}</h2>
-  <h3>... and my new Astro site!</h3>
+<h2>About You Me and the Gospel</h2>
 
-  <p>
-    I am working through Astro's introductory tutorial. This is the second page
-    on my website, and it's the first one I built myself!
-  </p>
+<p>Welcome to <strong>You Me and the Gospel</strong>, a space for weekly life studies and meaningful conversations about the Gospel, life, and everything in between. This is where faith meets real-life experiences, creating a platform for exploration, reflection, and growth.</p>
 
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>
-      I live in {identity.country} and I work as a {identity.occupation}.
-    </li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
+<p>Currently in beta, our site features an innovative approach to sharing faith-inspired content. We’re excited to present a podcast powered by AI, created from live session audio. Each episode includes detailed AI-generated summaries and show notes, discussed Bible passages, and helpful references to deepen your understanding.</p>
 
-  <p>
-    I have experience with a wide range of technical skills that are useful for
-    web development and writing documentation. Some of my strongest abilities
-    are with HTML, CSS, JavaScript, React, and Astro. I also have skills in
-    writing documentation, which helps me create tutorials and API references.
-    My goal is to continue improving my development and writing skills over
-    time.
-  </p>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li>{skill}</li>)}
-  </ul>
-  {happy && <p>I am happy to be learning Astro!</p>}
+<p>Whether you’re here to listen, read, or simply explore, <strong>You Me and the Gospel</strong> is designed to inspire thoughtful dialogue and foster connections grounded in faith. Join us on this journey as we navigate life together through the lens of the Gospel.</p>
 
-  {finished && <p>I finished this tutorial!</p>}
 
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
 </Layout>
