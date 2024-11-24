@@ -14,6 +14,7 @@ body {
       padding-block: 1rem;
       a[href] {
         color: currentColor;
+        font-size: var(--fs-5);
         &:hover {
           color: var(--error-color);
         }

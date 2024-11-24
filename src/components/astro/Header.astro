@@ -1,4 +1,6 @@
 ---
+import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config.ts";
+
 export type Props = {
   headerTitle?: string;
   headerDescription?: string;
@@ -10,8 +12,8 @@ const {  headerTitle, headerDescription, headerImageUrl, headerImageAlt } = Astr
 
 <header>
   <section id="header">
-    <h2 data-ui="display">{headerTitle || "Header Title Here"}</h2>
-    <p>{headerDescription || "My really cool site desciption or slug"}</p>
+    <h2 data-ui="display">{headerTitle || SITE_TITLE}</h2>
+    <p>{headerDescription || SITE_DESCRIPTION}</p>
    <!-- { headerImageUrl && <div><img src={headerImageUrl} alt={headerImageAlt} /></div> }   -->
   </section>
 </header>
