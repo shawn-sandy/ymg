@@ -36,7 +36,7 @@ main > section {
 header {
   --overlay-bg: transparent;
   min-height: fit-content;
-  padding-block: 3rem;
+  padding-block: 1rem;
   grid-template-rows: minmax(300px, auto);
   div {
     > img {
@@ -46,10 +46,10 @@ header {
 }
 
 header > section  p {
-  font-size: var(--fs-7);
+  font-size: var(--fs-8);
   font-weight: 500;
   margin-inline: auto;
-  color: var(--error-color);
+  color: #4a4a4a; /* Accessible gray color on a white background */
 
 }
 
