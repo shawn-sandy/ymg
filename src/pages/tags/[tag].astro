@@ -27,7 +27,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<Layout pageTitle={`Tag: ${tag}`}>
+<Layout pageTitle={`${tag}`}>
   <ul data-list="unstyled">
     {
       posts?.map((post) => (
