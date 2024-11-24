@@ -8,6 +8,7 @@ const postsCollection = defineCollection({
     author: z.string(),
     summary: z.string().optional(),
     breadcrumbSlug: z.string().optional(), // should match the slug
+    thumbnail: z.string().optional(),
     image: z
       .object({
         url: z.string(),
