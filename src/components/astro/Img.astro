@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 import { Img } from "astro-imagetools/components";
 
 export type Props = {
@@ -14,7 +14,7 @@ const { imgSrc, imgAlt, imgWidth, imgHeight, imgCaption } = Astro.props;
 ---
 
 <figure>
-  <Img
+  <img
     src={imgSrc}
     alt=`${imgAlt}`
     width={imgWidth || 1200}

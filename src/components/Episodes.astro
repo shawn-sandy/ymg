@@ -1,0 +1,75 @@
+---
+import { getCollection } from "astro:content";
+import type { SortType } from "#utils/types"; 
+import { PAGINATION_COUNT } from "#utils/site-config";
+import { Card } from "@fpkit/acss";
+
+import type { TODO } from "#utils/types";
+
+/**
+ * The props for the CollectionList component.
+ * @typedef {Object} Props
+ * @property {string} [contentTitle] - The title to display for the collection.
+ * @property {number} [pageSize] - The number of items per page.
+ * @property {string} [to] - The link for the "View All" button.
+ * @property {any} [collection] - The collection to display.
+ */
+
+export type Props = {
+  collectionTitle?: string;
+  pageSize?: number;
+  to?: string;
+  collection?: TODO;
+};
+
+const { collectionTitle, pageSize, to, collection } = Astro.props;
+const collectionResults = (await getCollection(collection || "content"))
+  .filter(({ data: data }) => {
+    return data.publish === true;
+  })
+  .sort(
+    (a: SortType, b: SortType) =>
+      b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  )
+  .slice(0, PAGINATION_COUNT || 3);
+---
+
+{collectionTitle && <h3 data-ui="display">{collectionTitle}</h3>}
+
+<div data-flex="cols-2">
+  {
+    collectionResults?.map((post: TODO) => (
+ 
+        <Card>
+          <img src={post.data.image?.url ?? "/images/ymg-blank.png"} alt="" />
+          <Card.Title>
+            <a
+                href={`/${to || "content"}/${post.slug}` || "#"}
+                aria-label={`Check episode ${post.data?.title}`}
+                class="card-title"
+              >
+            {post.data?.title ?? "Card Feature"}
+            </a>
+            </Card.Title>
+          <Card.Content>
+            {post.data?.description}
+          </Card.Content>
+          
+            <div class="card-footer">
+              <a
+                href={`/${to || "content"}/${post.slug}` || "#"}
+                aria-label={`Check episode ${post.data?.title}`}
+              >
+                <i>Continue to Episode</i>
+              </a>
+            </div>         
+        </Card>
+     
+    ))
+  }
+</div>
+<style>
+  h3 > a[href] {
+    font-size: var(--fs-7)
+  }
+</style>

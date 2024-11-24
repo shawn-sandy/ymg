@@ -1,0 +1,28 @@
+---
+import { Card  } from "@fpkit/acss";
+
+type Props = {
+  cardTitle?: string;
+  cardImage?: string;
+  cardLink?: string;
+};
+
+const { cardTitle, cardImage, cardLink } = Astro.props as Props;
+---
+
+<Card client:load>
+   <img src={cardImage || "images/ymg-blank.png"} alt="" />
+  <Card.Title>{cardTitle ?? "Card Feature"}</Card.Title>
+  <Card.Content>
+    <slot />
+  </Card.Content>
+  {
+    cardLink && (
+      <div class="card-footer">
+        <a href={cardLink || "#"} aria-label={`Check episode ${cardTitle}`}>
+          <i>Check Episode</i>
+        </a>
+      </div>
+    )
+  }
+</Card>

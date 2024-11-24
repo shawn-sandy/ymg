@@ -2,9 +2,27 @@
   --img-radius: 1rem;
   --error-color: firebrick;
   --success-color: green;
+  --overlay-bg: transparent;
 }
 body {
   min-width: 20.3125rem;
+  > nav {
+    width: min(100%, 1480px);
+    margin-inline: auto;
+    max-width: min(100%, 1480px);
+    ul > li {
+      padding-block: 1rem;
+      a[href] {
+        color: currentColor;
+        &:hover {
+          color: var(--error-color);
+        }
+      }
+      &:hover {
+        background-color: unset;
+      }
+    }
+  }
 }
 
 main {
@@ -16,6 +34,7 @@ main > section {
 }
 
 header {
+  --overlay-bg: transparent;
   min-height: fit-content;
   padding-block: 3rem;
   grid-template-rows: minmax(300px, auto);
@@ -26,14 +45,12 @@ header {
   }
 }
 
-header > section > p {
-  font-size: 2rem;
-}
+header > section  p {
+  font-size: var(--fs-7);
+  font-weight: 500;
+  margin-inline: auto;
+  color: var(--error-color);
 
-h1,
-h2,
-h3 {
-  text-transform: capitalize;
 }
 
 h1,
@@ -44,7 +61,6 @@ h3 {
 
 h2 a[href] {
   font-size: var(--h2);
-  /* color: currentColor; */
 }
 
 pre {
