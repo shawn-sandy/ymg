@@ -42,22 +42,34 @@ const collectionResults = (await getCollection(collection || "content"))
  
         <Card>
           <img src={post.data.image?.url ?? "/images/ymg-blank.png"} alt="" />
-          <Card.Title>{post.data?.title ?? "Card Feature"}</Card.Title>
+          <Card.Title>
+            <a
+                href={`/${to || "content"}/${post.slug}` || "#"}
+                aria-label={`Check episode ${post.data?.title}`}
+                class="card-title"
+              >
+            {post.data?.title ?? "Card Feature"}
+            </a>
+            </Card.Title>
           <Card.Content>
             {post.data?.description}
           </Card.Content>
-          {
+          
             <div class="card-footer">
               <a
                 href={`/${to || "content"}/${post.slug}` || "#"}
                 aria-label={`Check episode ${post.data?.title}`}
               >
-                <i>Check Episode</i>
+                <i>Continue to Episode</i>
               </a>
-            </div>
-          }
+            </div>         
         </Card>
      
     ))
   }
 </div>
+<style>
+  h3 > a[href] {
+    font-size: var(--fs-7)
+  }
+</style>
