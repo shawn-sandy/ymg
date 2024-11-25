@@ -11,7 +11,7 @@ body {
     margin-inline: auto;
     max-width: min(100%, 1480px);
     ul > li {
-      padding-block: 1rem;
+      padding-block: 0rem;
       a[href] {
         color: currentColor;
         font-size: var(--fs-5);
