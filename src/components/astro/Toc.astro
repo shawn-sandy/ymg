@@ -12,7 +12,7 @@ const { headings, headingName } = Astro.props;
 {headings?.length > 1 && (
     
    <h4> 
-   { headingName || "Content Guide" }
+   { headingName || "Article Guide" }
    </h4>
    <ul data-list="unstyled">
       {headings.map((heading: TODO) => (
