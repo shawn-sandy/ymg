@@ -3,27 +3,31 @@ import type { TODO } from "#utils/types.js"
 
 export type Props = {
   headings?: TODO;
+  headingName?: string;
   hash?: string;
 }
-const { headings } = Astro.props;
+const { headings, headingName } = Astro.props;
 ---
 
 {headings?.length > 1 && (
-   <> <ul data-list="unstyled">
+    
+   <h4> 
+   { headingName || "Content Guide" }
+   </h4>
+   <ul data-list="unstyled">
       {headings.map((heading: TODO) => (
         <li>
-         <a href={`#${heading.slug}`}>&#8595;  
+         <a href={`#${heading.slug}`}> 
           {heading.text}</a>
         </li>
       ))}
     </ul>
     <hr/>
-
-    </>
+ 
   )}
   <style>
     a {
-      font-weight: 600;
-      font-size: var(--fs-5);
+      /* font-weight: 600; */
+      /* font-size: var(--fs-3); */
     }
   </style>

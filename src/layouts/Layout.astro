@@ -8,6 +8,7 @@ import AstroBreadcrumb from "#components/react/astro-breadcrumb.tsx";
 import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config";
 import "@fpkit/acss/styles";
 import "../styles/index.css";
+import Toc from "#components/astro/Toc.astro";
 
 // types
 type routeItem = {
@@ -20,13 +21,14 @@ type Props = {
   pageDescription?: string;
   pageImageUrl?: string;
   showBreadcrumb?: boolean;
+  markdownHeaders?: string[];
   breadcrumbRoutes?: routeItem[];
 };
 
 const showBreadcrumb =
   Astro.props.showBreadcrumb === undefined ? true : Astro.props.showBreadcrumb;
 
-const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl } =
+const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl, markdownHeaders } =
   Astro.props;
 ---
 
@@ -53,6 +55,7 @@ const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl } =
     <slot name="featured" />
     <main>
       <section>
+
         {
           showBreadcrumb && (
             <>
@@ -64,11 +67,19 @@ const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl } =
           )
         }
       </section>
-      <section arai-label="main-content">
+      <section aria-label="main-content">
         <article>
+          <div class="mobile ">
+            { markdownHeaders && <Toc headings={markdownHeaders} /> }
+          </div>
           <slot />
         </article>
-        <Sidebar />
+        <aside>
+          <div class="mobile-desktop">
+            { markdownHeaders && <Toc headings={markdownHeaders} /> }
+          </div>
+          <Sidebar />
+        </aside>
       </section>
     </main>
     <Footer />
