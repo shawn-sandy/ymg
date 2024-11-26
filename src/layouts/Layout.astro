@@ -9,6 +9,7 @@ import Toc from "#components/astro/Toc.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config";
 import "@fpkit/acss/styles";
 import "../styles/index.css";
+import OpenGraph from "#components/astro/OpenGraph.astro";
 
 // types
 type routeItem = {
@@ -23,12 +24,16 @@ type Props = {
   showBreadcrumb?: boolean;
   markdownHeaders?: string[];
   breadcrumbRoutes?: routeItem[];
+  ogImage?: string;
+  ogDescription?: string;
 };
+
+const currentPageSlug = Astro.url.pathname;
 
 const showBreadcrumb =
   Astro.props.showBreadcrumb === undefined ? true : Astro.props.showBreadcrumb;
 
-const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl, markdownHeaders } =
+const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl, markdownHeaders, ogImage, ogDescription } =
   Astro.props;
 ---
 
@@ -42,6 +47,14 @@ const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl, markdownHead
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle || SITE_TITLE}</title>
+    <OpenGraph
+    title={pageTitle || SITE_TITLE}
+    description={ogDescription || pageDescription || SITE_DESCRIPTION}
+    url={Astro.url.href}
+    image={ogImage || "/images/a11y-banner.webp"}
+    type="article"
+    twitterUsername="shawnsandy"
+  />
     <ViewTransitions />
   </head>
   <body>
