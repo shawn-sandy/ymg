@@ -1,9 +1,6 @@
 ---
 import Layout from "./Layout.astro";
 import Youtube from "#components/astro/Youtube.astro";
-import Img from "#components/astro/Img.astro";
-import Toc from "#components/astro/Toc.astro";
-import TextToSpeech from "#components/astro/TextToSpeech.astro";
 import type { TODO } from "#utils/types.js";
 const frontmatter = Astro.props.frontmatter;
 const headings = Astro.props.headings;
@@ -29,6 +26,8 @@ const contentRoute: ContentRoute[] = [
   pageDescription={frontmatter.description}
   breadcrumbRoutes={contentRoute}
   markdownHeaders={headings}
+  ogImage={frontmatter.image?.url || null}
+  ogDescription={frontmatter.summary || frontmatter.description}
 >
   {
     frontmatter.image && (
