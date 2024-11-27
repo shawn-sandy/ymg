@@ -8,6 +8,16 @@ npm create astro@latest -- --template minimal
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/shawn-sandy/astro-basics)
 
 > A minimal Astro starter kit with a blog and documentation template.
+Here is a draft of the README for your repository based on the provided context and existing files:
+
+```markdown
+# YMG - Your Minimal Guide
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://github.com/shawn-sandy/astro-basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/shawn-sandy/astro-basics)
+
+> A minimal Astro starter kit with a blog and documentation template.
 
 ## Features
 
@@ -31,12 +41,12 @@ npm create astro@latest -- --template minimal
 
 ## Getting Started
 
-To get started with this AstroKit:
+To get started with YMG:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/shawn-sandy/astro-basics.git
-   cd astro-basics
+   git clone https://github.com/shawn-sandy/ymg.git
+   cd ymg
    ```
 
 2. Install dependencies:
@@ -103,15 +113,16 @@ Here's a list of key components and their documentation:
    - Used in blog listing pages
    - Customizable for different collections and page sizes
    - Uses Astro's content collections for data-driven content
+
 9. **CollectionList (src/components/astro/CollectionList.astro)**
    - Displays a list of collections
    - Used in blog listing pages
    - Customizable for different collections and page sizes
    - Uses Astro's content collections for data-driven content
+
 10. **ContactForm (src/components/astro/ContactForm.astro)**
    - Displays a contact form
    - Used in contact Pages
-   - 
 
 These components form the core of the Astro Starter Kit, providing a solid foundation for building content-rich websites with pagination and optimized performance.
 
@@ -144,3 +155,6 @@ Here's a list of key pages and their documentation:
    - Displays when a page is not found
 
 These pages form the core of the Astro Starter Kit, providing a solid foundation for building content-rich websites with pagination and optimized performance.
+```
+
+Feel free to edit and customize this draft to better fit your project's specific details and needs.
