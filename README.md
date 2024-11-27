@@ -1,16 +1,3 @@
-# Astro Starter Kit: Minimal
-```sh
-npm create astro@latest -- --template minimal
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://github.com/shawn-sandy/astro-basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/shawn-sandy/astro-basics)
-
-> A minimal Astro starter kit with a blog and documentation template.
-Here is a draft of the README for your repository based on the provided context and existing files:
-
-```markdown
 # YMG - Your Minimal Guide
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
@@ -24,7 +11,6 @@ Here is a draft of the README for your repository based on the provided context 
 - **Astro**: A static site builder that uses modern JavaScript and TypeScript.
 - **Vite**: A build tool that uses modern JavaScript and TypeScript.
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
-- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
 - **Blog and Documentation Templates**: Ready-to-use templates for creating blog posts and documentation pages.
 - **Pagination**: Built-in pagination for blog posts and documentation pages.
 - **Content Collections**: Utilizes Astro's content collections for organized content management.
@@ -155,6 +141,3 @@ Here's a list of key pages and their documentation:
    - Displays when a page is not found
 
 These pages form the core of the Astro Starter Kit, providing a solid foundation for building content-rich websites with pagination and optimized performance.
-```
-
-Feel free to edit and customize this draft to better fit your project's specific details and needs.
