@@ -87,7 +87,7 @@ article > * + * {
   margin-block-start: 1.5rem;
 }
 
-article p {
+article > :where(p, h2, h3) {
   max-width: 80ch;
 }
 
@@ -106,8 +106,8 @@ article li {
   font-size: var(--fs-0);
 }
 
-p {
-  max-width: 60ch;
+p, h2 {
+  max-width: 80ch;
 }
 
 article > figure:has(img[alt]) {
