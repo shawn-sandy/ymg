@@ -87,7 +87,7 @@ article > * + * {
   margin-block-start: 1.5rem;
 }
 
-article > :where(p, h2, h3) {
+article:where( p, h2, h3) {
   max-width: 80ch;
 }
 
@@ -131,7 +131,7 @@ img + * {
 
 section:has([data-grid], [data-flex]) {
   width: var(--content-w, 100%);
-  padding-block: var(--space-l, 3rem);
+  padding-block: var(--space-l, 0);
   padding-inline: var(--px, 1rem);
   width: min(100%, 1480px);
   --card-gap: 1rem;
