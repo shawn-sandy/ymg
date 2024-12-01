@@ -39,7 +39,7 @@ const collectionResults = (await getCollection(collection || "posts"))
     <BlogPosts
       title={post.data.title}
       url={`/${to || "posts"}/${post.slug}`}
-      description={post.data.description}
+      // description={post.data.description}
     />
   ))
 }

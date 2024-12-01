@@ -15,6 +15,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config.js";
     <Episodes />
   </section>
   <section>
-    <CollectionList pageSize={2} />
+    <h2>
+      Latest Collections
+    </h2>
+    <hr>
+    <CollectionList pageSize={5} />
   </section>
 </Layout>
+<style>
+  h2 {
+    font-size: var(--fs-9);
+  }
+</style>

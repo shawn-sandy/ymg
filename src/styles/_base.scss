@@ -87,7 +87,7 @@ article > * + * {
   margin-block-start: 1.5rem;
 }
 
-article > :where(p, h2, h3) {
+article:where( p, h2, h3) {
   max-width: 80ch;
 }
 
