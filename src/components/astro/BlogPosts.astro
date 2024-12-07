@@ -10,16 +10,10 @@ const { title, url, description } = Astro.props;
 <h3 data-ui="display">
   <a href={url}>{title}</a>
 </h3>
-<!-- {description && <p>{description}</p>} -->
-<!-- <p>
-  <a href={url}> <b>Continue</b></a>
-</p> -->
- <hr>
 <style>
   h3 > a[href] {
     font-size: var(--fs-7)
   }
- 
 </style>
 
 
