@@ -26,7 +26,7 @@ const contentRoute: ContentRoute[] = [
   pageDescription={frontmatter.description}
   breadcrumbRoutes={contentRoute}
   markdownHeaders={headings}
-  ogImage={frontmatter.image?.url || null}
+  ogImage={frontmatter.image?.url || "images/ymg-blank.png"}
   ogDescription={frontmatter.summary || frontmatter.description}
 >
   {
