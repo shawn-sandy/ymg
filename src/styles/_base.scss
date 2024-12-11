@@ -107,7 +107,11 @@ article li {
 }
 
 p, h2 {
-  max-width: 80ch;
+  max-width: 90ch;
+}
+
+p {
+  font-size: var(--fs-5);
 }
 
 article > figure:has(img[alt]) {
