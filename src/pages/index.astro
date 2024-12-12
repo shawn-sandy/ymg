@@ -7,15 +7,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config.js";
 
 <Layout
   pageTitle={SITE_TITLE}
-  pageDescription={SITE_DESCRIPTION}
   showBreadcrumb={false}
   pageImageUrl="/images/astro-kit-cover.webp"
 >
   <section slot="featured">
     <Episodes />
   </section>
+
   <section>
-    <CollectionList pageSize={5} />
+    <CollectionList pageSize={5} collectionTitle="Recent Articles" />
   </section>
 </Layout>
 <style>

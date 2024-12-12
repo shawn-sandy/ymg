@@ -8,12 +8,13 @@ export type Props = {
   headerImageAlt?: string;
 };
 const {  headerTitle, headerDescription, headerImageUrl, headerImageAlt } = Astro.props;
+const currentPageSlug = Astro.url.pathname;
 ---
 
 <header>
   <section id="header">
     <h2 data-ui="display">{headerTitle || SITE_TITLE}</h2>
-    <p>{headerDescription || SITE_DESCRIPTION}</p>
+    {headerDescription && <p>{headerDescription}</p>}
    <!-- { headerImageUrl && <div><img src={headerImageUrl} alt={headerImageAlt} /></div> }   -->
   </section>
 </header>
