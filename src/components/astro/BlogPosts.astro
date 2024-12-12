@@ -5,15 +5,21 @@ export type Props = {
   description?: string;
 };
 const { title, url, description } = Astro.props;
+import { Icon } from "@fpkit/acss";
 ---
 
 <h3 data-ui="display">
-  <a href={url}>{title}</a>
+  <a href={url}> <Icon>
+  {title} <Icon.ArrowRight /> 
+  </Icon></a>
 </h3>
 <style>
-  h3 > a[href] {
-    font-size: var(--fs-7)
-  }
+  h3{
+    display: flex;
+    align-items: center; 
+    > a[href] {
+    font-size: var(--fs-6)
+  }}
 </style>
 
 
