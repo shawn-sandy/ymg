@@ -9,9 +9,11 @@ import { Icon } from "@fpkit/acss";
 ---
 
 <h3 data-ui="display">
-  <a href={url}> <Icon>
-  {title} <Icon.ArrowRight /> 
-  </Icon></a>
+  <a href={url}> 
+    <Icon>
+  <Icon.Right size={32} /> {title} 
+  </Icon>
+</a>
 </h3>
 <style>
   h3{
@@ -19,6 +21,8 @@ import { Icon } from "@fpkit/acss";
     align-items: center; 
     > a[href] {
     font-size: var(--fs-6)
+    display: flex;
+    align-items: center;
   }}
 </style>
 
