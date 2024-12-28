@@ -9,23 +9,26 @@ import { Icon } from "@fpkit/acss";
 ---
 
 <h3 data-ui="display">
-  <a href={url}> 
-    <Icon>
-  <Icon.Right size={24} /> 
-</Icon> 
-  {title} 
-</a>
+  <a href={url}>
+      {title}
+  </a>
 </h3>
 <style>
-  h3{
-    display: flex;
-    align-items: center; 
-    > a[href] {
-    font-size: var(--fs-6)
+  h3 {
     display: flex;
     align-items: center;
-
-  }}
+    flex-wrap: wrap;
+    > a[href] {
+      font-size: var(--fs-6);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      word-break: break-all;
+      width: 90%;
+      span {
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+    }
+  }
 </style>
-
-
