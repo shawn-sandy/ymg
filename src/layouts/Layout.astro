@@ -1,18 +1,18 @@
 ---
-import { ClientRouter  } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+import "@fpkit/acss/styles";
+import "../styles/index.css";
+import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config";
 import Navigation from "#components/astro/Navigation.astro";
 import Footer from "#components/astro/Footer.astro";
 import Header from "#components/astro/Header.astro";
 import Sidebar from "#components/astro/Sidebar.astro";
-import AstroBreadcrumb from "#components/react/astro-breadcrumb.tsx";
 import Toc from "#components/astro/Toc.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "#utils/site-config";
-import "@fpkit/acss/styles";
-import "../styles/index.css";
 import OpenGraph from "#components/astro/OpenGraph.astro";
+import AstroBreadcrumb from "#components/react/astro-breadcrumb.tsx";
 
 // types
-type routeItem = {
+type RouteItem = {
   name: string;
   url: string;
   path?: string;
@@ -23,7 +23,7 @@ type Props = {
   pageImageUrl?: string;
   showBreadcrumb?: boolean;
   markdownHeaders?: string[];
-  breadcrumbRoutes?: routeItem[];
+  breadcrumbRoutes?: RouteItem[];
   ogImage?: string;
   ogDescription?: string;
 };
@@ -44,7 +44,6 @@ const { pageTitle, pageDescription, breadcrumbRoutes, pageImageUrl, markdownHead
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={SITE_DESCRIPTION} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle || SITE_TITLE}</title>
     <OpenGraph
